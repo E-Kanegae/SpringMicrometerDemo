@@ -28,4 +28,4 @@
 .DS*
 
 ### Docker config ###
-/config
+#/config

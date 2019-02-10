@@ -29,7 +29,7 @@ public class MemoryMetrics {
 	 *
 	 * このアプリケーションが使用しているヒープ容量を返却するメソッド
 	 *
-	 * Input : void
+	 * Input : none
 	 * Output: long
 	 * @return ヒープ使用量 Kbytes
 	 */
@@ -44,7 +44,7 @@ public class MemoryMetrics {
 	 *
 	 * このアプリケーションが使用しているノンヒープ容量を返却するメソッド
 	 *
-	 * Input : void
+	 * Input : none
 	 * Output: long
 	 * @return ノンヒープ使用量 Kbytes
 	 */
