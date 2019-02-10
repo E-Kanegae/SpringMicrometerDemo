@@ -25,7 +25,6 @@ public class CompilerMetrics {
 	long totalTimeFromApStarted;
 
 	CompilerMetrics(MeterRegistry meterRegistry){
-		totalTimeFromApStarted = System.currentTimeMillis(); //AP起動時の時間
 		meterRegistry.gauge("custom.metrics.jit.compile.time", this, CompilerMetrics::getTotalCompileSeconds);
 	}
 
