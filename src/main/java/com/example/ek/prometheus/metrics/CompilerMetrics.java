@@ -19,11 +19,6 @@ import io.micrometer.core.instrument.MeterRegistry;
 @Component
 public class CompilerMetrics {
 
-	/**
-	 * AP起動してからの時間 [ms]
-	 */
-	long totalTimeFromApStarted;
-
 	CompilerMetrics(MeterRegistry meterRegistry){
 		meterRegistry.gauge("custom.metrics.jit.compile.time", this, CompilerMetrics::getTotalCompileSeconds);
 	}
@@ -41,7 +36,5 @@ public class CompilerMetrics {
 		long totalTime = compilationMx.getTotalCompilationTime();
 		return totalTime == 0 ? 0 : totalTime/ 1000;
 	}
-
-
 
 }
