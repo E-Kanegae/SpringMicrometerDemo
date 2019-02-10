@@ -1,4 +1,4 @@
-package com.example.ek.prometheusdemo.web.operation;
+package com.example.ek.prometheus.web.operation;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -50,8 +50,9 @@ public class SeveralOperateController {
 	 */
 	@GetMapping("sleep")
 	public String sleep() {
+		int sleepTime = new Random().nextInt(THREAD_SLEEP_TIME);
 		try {
-			Thread.sleep(new Random().nextInt(THREAD_SLEEP_TIME));
+			Thread.sleep(sleepTime);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 			return "Thread Sleep Fail";

@@ -1,4 +1,4 @@
-package com.example.ek.prometheusdemo;
+package com.example.ek.prometheus;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
