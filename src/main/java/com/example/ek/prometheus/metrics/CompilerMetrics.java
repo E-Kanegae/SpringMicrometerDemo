@@ -36,5 +36,4 @@ public class CompilerMetrics {
 		long totalTime = compilationMx.getTotalCompilationTime();
 		return totalTime == 0 ? 0 : totalTime/ 1000;
 	}
-
 }

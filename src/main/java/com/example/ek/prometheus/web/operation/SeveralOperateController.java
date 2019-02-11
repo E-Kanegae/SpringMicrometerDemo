@@ -35,7 +35,7 @@ public class SeveralOperateController {
 	public String memory() {
 		List<String> list = new LinkedList<String>();
 		for (int i = 0; i < 1024; i++) {
-			list.add(new String(new byte[1024]));
+			list.add(new String(new byte[1024 * 1024]));
 		}
 		list = null;
 		return "Memory Operation Success";

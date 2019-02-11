@@ -22,10 +22,11 @@ public class MemoryMetrics {
 
 	MemoryMetrics(MeterRegistry meterRegistry){
 		meterRegistry.gauge("custom.metrics.heap.used", this, MemoryMetrics::getUsedHeapMemoryUsage);
-		meterRegistry.gauge("custom.metrics.non-heap.used", this, MemoryMetrics::getUsedHeapMemoryUsage);
+		meterRegistry.gauge("custom.metrics.non-heap.used", this, MemoryMetrics::getUsedNonHeapMemoryUsage);
 	}
 
 	/**
+	 *
 	 *
 	 * このアプリケーションが使用しているヒープ容量を返却するメソッド
 	 *
@@ -37,7 +38,7 @@ public class MemoryMetrics {
 		MemoryMXBean memoryMx = ManagementFactory.getMemoryMXBean();
 		long usedHeap = memoryMx.getHeapMemoryUsage().getUsed();
 
-		return usedHeap / 1024; // KB表示にする。
+		return usedHeap;
 	}
 
 	/**
@@ -51,7 +52,7 @@ public class MemoryMetrics {
 	public long getUsedNonHeapMemoryUsage(){
 		MemoryMXBean memoryMx = ManagementFactory.getMemoryMXBean();
 		long usedNonHeap = memoryMx.getNonHeapMemoryUsage().getUsed();
-		return usedNonHeap / 1024; // KB表示にする。
+		return usedNonHeap;
 	}
 
 }
